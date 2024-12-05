@@ -1,39 +1,35 @@
 .container {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 0px;
-  margin-top: 5%;
-  position: relative; /* To position the pseudo-element correctly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Allow stacking context for child elements */
+  overflow: hidden;
 }
 
 .imgContainer {
-  grid-area: 1 / 1 / 2 / 3;
   width: 100%;
-  overflow: hidden; /* Hide the bottom part of the image */
+  max-width: 80%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align to the top */
+  align-items: flex-start;
+  position: relative; /* Ensures this container is a stacking context */
 }
 
 .corpseImg {
-  transform: scale(4) translateY(1%) translateX(2.5%); /* Zoom into the top part of the image */
-  transform-origin: top; /* Ensure the zoom focuses on the top */
+  transform: scale(3.5) translateY(0);
+  transform-origin: top;
   color: #001219;
+  position: relative; /* Needed for z-index to work */
 }
 
-.label {
-  color: white;
-  text-align: left;
-  display: flex; /* Use flexbox for vertical centering */
-  align-items: center; /* Vertically center the content */
-  justify-content: center; /* Optionally horizontally center the content */
-  height: 100%; /* Ensure the container takes up full height */
-}
-
-.label p {
-  font-size: 1.5em;
+.simPointContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Ensure this container is positioned for z-index to work */
+  z-index: 10; /* Ensures it's above the image */
+  transform: translateZ(10%);
 }

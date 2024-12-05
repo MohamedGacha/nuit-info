@@ -1,0 +1,22 @@
+.simPointContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.humanImg,
+.oceanImg {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.oceanImg {
+  display: none; /* By default, the ocean image is hidden */
+}
+
+/* When the container is clicked, show the ocean image */
+.showOcean .oceanImg {
+  display: block;
+}
