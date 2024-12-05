@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  margin-top: 5%;
+  position: relative; /* To position the pseudo-element correctly */
+}
+
+.imgContainer {
+  grid-area: 1 / 1 / 2 / 3;
+  width: 100%;
+  overflow: hidden; /* Hide the bottom part of the image */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to the top */
+}
+
+.corpseImg {
+  transform: scale(4) translateY(1%) translateX(2.5%); /* Zoom into the top part of the image */
+  transform-origin: top; /* Ensure the zoom focuses on the top */
+  color: #001219;
+}
+
+.label {
+  color: white;
+  text-align: left;
+  display: flex; /* Use flexbox for vertical centering */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Optionally horizontally center the content */
+  height: 100%; /* Ensure the container takes up full height */
+}
+
+.label p {
+  font-size: 1.5em;
+}

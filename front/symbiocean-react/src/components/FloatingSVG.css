@@ -1,0 +1,14 @@
+.floating-svg-scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/water.gif") no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.floating-svg-scene canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
